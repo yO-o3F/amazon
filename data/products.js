@@ -656,5 +656,34 @@ const products = [
       "apparel",
       "mens"
     ]
+  },
+  {
+    id: "id1",
+    image: "images/products/backpack.jpg",
+    name: "black backpack 30L",
+    rating: {
+      stars: 2.5,
+      count: 69
+    },
+    priceCents: 1850,
+    keywords: [
+      "backpack",
+      "brief case",
+      "bag"
+    ]
+  },
+  {
+    id: "id2",
+    image: "images/products/umbrella.jpg",
+    name: "Umbrella full size green",
+    rating: {
+      stars: 4,
+      count: 3
+    },
+    priceCents: 1299,
+    keywords: [
+      "umbrella",
+      "rain",
+    ]
   }
 ];
