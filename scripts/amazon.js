@@ -41,7 +41,7 @@ products.forEach((product) => {
 
       <div class="product-spacer"></div>
 
-      <div class="added-to-cart">
+      <div class="added-to-cart js-added-to-cart-${product.id}">
         <img src="images/icons/checkmark.png">
         Added
       </div>
@@ -56,13 +56,40 @@ products.forEach((product) => {
 document.querySelector('.js-products-grid')
   .innerHTML += productsHTML;
 
+const addedMessageTimeouts = {};
+  
 document.querySelectorAll('.js-add-to-cart')
   .forEach((button) => {
     button.addEventListener('click', () => {
       const { productId } = button.dataset;
       const quantitySelector = document.querySelector(`.js-quantity-selector-${productId}`);
       const quantity = Number(quantitySelector.value);
+      const addedMessage = document.querySelector(`.js-added-to-cart-${productId}`)
+      
+      /* I solved this exercise corrctly a day after I looked at its solution.
+       It was so hard and I couldn't solve it on my own, in my own code I 
+       wrote a solution which 'added-to-cart-visible' class of one or more
+       buttons would get deleted at the same time after 2 seconds of clicking the last button.
+       I rewrite it and reached a point where everything was working except if I clicked second
+       button for few times (after clicking the first one few times and 2 seconds hasn't passed) 
+       it would not clear its timeout and the class would disapper sooner, but after that everything
+       would work normal again.
+       my problem was that I didn't define add to cart buttons using their productId and I was just 
+       storing their timeout ids which wasn't correct.*/
 
+      addedMessage.classList.add('added-to-cart-visible');
+      const previousTimeoutId = addedMessageTimeouts[productId];
+
+      if (addedMessageTimeouts[productId]) {
+        clearTimeout(previousTimeoutId);
+      }
+
+      const timeoutId = setTimeout(() => {
+        addedMessage.classList.remove('added-to-cart-visible');
+      }, 2000);
+
+      addedMessageTimeouts[productId] = timeoutId;
+      
       let matchingItem;
 
       cart.forEach((item) => {
@@ -88,5 +115,5 @@ document.querySelectorAll('.js-add-to-cart')
 
       document.querySelector('.js-cart-quantity')
         .innerHTML = cartQuantity;
-    });
   });
+});
