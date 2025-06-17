@@ -1,1 +1,4 @@
-# amazon
+- use module for: *cart.js,  *products.js  //done
+- make calculatingPrice a function and place it in another folder.
+- create a function for updating cart quantity inside cart.js
+- create a function for adding items by add to cart button inside cart.js
