@@ -2,7 +2,9 @@
 main idea of JavaScript:
 1- save the data.    => done
 2- generate HTML.   => done
-- fix bugs: radio buttons.
+- fix bugs: radio buttons.   => done
 3- make it interactive.
+
+delete btn: 
 
 I disablled font loader, don't forget to undo it
