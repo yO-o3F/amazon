@@ -1,5 +1,7 @@
-- use module for: *cart.js,  *products.js  //done
-- make calculatingPrice a function and place it in another folder.  //done
-- create a function for updating cart quantity  //done
-- create a function for adding items by add to cart button inside cart.js   //done
-- checkout.js
+- checkout.js:
+main idea of JavaScript:
+1- save the data.    => done
+2- generate HTML.   => done
+3- make it interactive.
+
+I disablled font loader, don't forget to undo it
