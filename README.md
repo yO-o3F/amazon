@@ -5,6 +5,6 @@ main idea of JavaScript:
 - fix bugs: radio buttons.   => done
 3- make it interactive.
 
-delete btn: 
+How to remove the item from HTML page onclick?
 
 I disablled font loader, don't forget to undo it
