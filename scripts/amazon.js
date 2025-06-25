@@ -1,4 +1,4 @@
-import {cart, addToCart} from '../data/cart.js';
+import {addToCart, calculateCartQuantity} from '../data/cart.js';
 import {products} from '../data/products.js';
 import {calculatePrice} from './utils/money.js';
 
@@ -60,17 +60,11 @@ products.forEach((product) => {
 document.querySelector('.js-products-grid')
   .innerHTML += productsHTML;
 
-
-
-function updateCartQuantity() {
-  let cartQuantity = 0;
-
-  cart.forEach((item) => {
-    cartQuantity += item.quantity;
-  });
-
+// 14d
+// I'm not sure if this is the correct spot to load the quantity, we can calculate it as soon as page loads.
+if (calculateCartQuantity() !== 0) {
   document.querySelector('.js-cart-quantity')
-    .innerHTML = cartQuantity;
+    .innerHTML = calculateCartQuantity();
 }
 
 const addedMessageTimeouts = {};
@@ -108,6 +102,7 @@ document.querySelectorAll('.js-add-to-cart')
       addedMessageTimeouts[productId] = timeoutId;
       
       addToCart(productId, quantity);
-      updateCartQuantity();
+      document.querySelector('.js-cart-quantity')
+        .innerHTML = calculateCartQuantity();
   });
 });

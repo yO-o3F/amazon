@@ -1,0 +1,31 @@
+- test hello.js external library
+- load and test dayjs.js library
+( external libraries have documentations and you can read them to learn how to use them. )
+- convert today's date into day-month-day(number)
+*Best Practice:
+         Try to find an external library first.
+         Before writing the code ourselves.
+*How to find external libraries?     search in google or AI chat bot
+
+External libraries ESM Version:  
+ ESM = EcmaScript Module = JavaScript  => a version of libraries that works with JS modules.
+
+- test hello.js ESM version
+- test dayJS.js ESM version
+
+*Default Export: (It's up to you which version of export you want to use)
+      another way of exporting.
+      we can use it when we only want to export 1 thing.
+- use Default export for money.js -> formatCurrency
+- save the data (1- create deliveryOptions.js  2- save the data  3-save the data inside cart.js too (when adding to cart, add id too ))
+       remove cart's localStorage (just to reload it and have deliveryOptionId)
+_ Generate HTML: create deliveryOptionsHTML function and do these 3 steps:
+      1- Loop through deliveryOptions
+      2- For each option, generate some HTML    -> use dateString and priceString variables.  create these as well: today and delivery Date
+      3- Combine the HTML together  -> collect generated HTML into a variable and return it, use the function inside previous HTML.
+bug:  use delivery option that's  inside cart and check its radio button. (I didn't understand this very well) 
+
+- generate delivery Date div text by using the same method you did for productId.
+*** Git total changes for this lesson: 14:43:00
+
+vmess://eyJhZGQiOiAiQ29SZS5DZU50UmFMbkV0LmlSIiwgImFpZCI6ICIwIiwgImhvc3QiOiAiIiwgImlkIjogIjgwMGYzYmI3LTI4ZGItNGZhOS04YWViLWM0YmU4ZTEyYTgxYyIsICJuZXQiOiAidGNwIiwgInBhdGgiOaAiIiwgInBvcnQiOiA0OTUxLCAicHMiOiAiXHVkODNjXHVkZGZhXHVkODNjXHVkZGYzICBbIFx1ZDgzZFx1ZGM4ZSBdIEBHWFZQTiB8XHUzMDEwXHUyNmExXHVmZTBmIGtpbWlhbWFoZGluZXpoYWRfMSBbIFNWMSBdIFx1ZDgzY1x1ZGRlZVx1ZDgzY1x1ZGRmNyBcdTMwMTEiLCAic2N5IjogImF1dG8iLCAidGxzIjogIm5vbmUiLCAidHlwZSI6ICIiLCAidiI6ICIyIn0=
